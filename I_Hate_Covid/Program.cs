@@ -37,6 +37,7 @@ namespace I_Hate_Covid
         {
             int difference;
             difference = wheel0.ElementIndex(input);
+
             //RotateAll(difference I HAVE AN ISSUE WITH SCOPE LEVELS!!!!!!
 
 
