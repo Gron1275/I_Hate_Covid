@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace I_Hate_Covid
 {
@@ -18,7 +16,13 @@ namespace I_Hate_Covid
             elementLoc = Array.IndexOf(elements, input);
             return elementLoc;
         }
-        
+        public object ElementLoc(int input)
+        {
+            object elementLoc;
+            elementLoc = elements.GetValue(input);
+            return elementLoc;
+        }
+
         public Wheel()
         {
             for (int i = 65; i <= 90; i++)
@@ -30,9 +34,7 @@ namespace I_Hate_Covid
         {
             object[] Rotated = new object[26];
             int Len = elements.Length;
-            //Console.WriteLine($"Array Length: {Len}");
             int locRot = (rot % Len);
-            //Console.WriteLine($"Local Rot: {locRot}");
             if (direction == 'R')
             {
                 for (int ind = 0; ind < Len; ind++)
@@ -67,5 +69,5 @@ namespace I_Hate_Covid
 
         }
     }
-        
+
 }
