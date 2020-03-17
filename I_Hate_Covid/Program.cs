@@ -18,7 +18,7 @@ namespace I_Hate_Covid
             Wheel wheel0 = new Wheel();
             Wheel wheel1 = new Wheel();
             Wheel wheel2 = new Wheel();
-            Wheel[] weelz = new Wheel[3]
+            Wheel[] wheelz = new Wheel[]
             {
                 wheel0, wheel1, wheel2
             };
@@ -42,7 +42,7 @@ namespace I_Hate_Covid
 
 
         }
-        public static void RotateAll(int rot, Wheel[] wheelzLoc)
+        public static void RotateAll(int rot, Wheel[] wheelzLoc = wheelz) //need wheelz to be defualt parameter b/c i want ease
         {
             foreach (Wheel i in wheelzLoc)
             {

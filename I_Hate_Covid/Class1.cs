@@ -7,6 +7,7 @@ namespace I_Hate_Covid
     class Wheel
     {
         private object[] elements = new object[26];
+
         public object[] Elements
         {
             get { return elements; }
