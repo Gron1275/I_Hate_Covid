@@ -4,7 +4,7 @@ namespace I_Hate_Covid
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             char[] key = new char[3];
             for (int i = 0; i < 3; i++)
@@ -18,6 +18,10 @@ namespace I_Hate_Covid
             Wheel wheel0 = new Wheel();
             Wheel wheel1 = new Wheel();
             Wheel wheel2 = new Wheel();
+            Wheel[] weelz = new Wheel[3]
+            {
+                wheel0, wheel1, wheel2
+            };
             wheel0.Rotate(locZero, (locZero % 2 == 0) ? 'L' : 'R');
             wheel1.Rotate(locOne, (locOne % 2 == 0) ? 'L' : 'R');
             wheel2.Rotate(locTwo, (locTwo % 2 == 0) ? 'L' : 'R');
@@ -29,14 +33,20 @@ namespace I_Hate_Covid
 
 
         }
-        public static void EncryptChar(char input, Wheel wheel0)
+        public static void EncryptChar(char input, ref Wheel wheel0)
         {
             int difference;
             difference = wheel0.ElementIndex(input);
-            wheel0.Rotate(difference, 'R');
-            Console.Write(wheel0.Elements[0]);
+            //RotateAll(difference I HAVE AN ISSUE WITH SCOPE LEVELS!!!!!!
 
 
+        }
+        public static void RotateAll(int rot, Wheel[] wheelzLoc)
+        {
+            foreach (Wheel i in wheelzLoc)
+            {
+                i.Rotate(rot, (rot % 2 == 0) ? 'L': 'R');
+            }
         }
         
     }
