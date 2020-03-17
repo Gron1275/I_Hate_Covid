@@ -1,0 +1,13 @@
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\bin\Debug\netcoreapp3.1\I_Hate_Covid.exe
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\bin\Debug\netcoreapp3.1\I_Hate_Covid.deps.json
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\bin\Debug\netcoreapp3.1\I_Hate_Covid.runtimeconfig.json
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\bin\Debug\netcoreapp3.1\I_Hate_Covid.runtimeconfig.dev.json
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\bin\Debug\netcoreapp3.1\I_Hate_Covid.dll
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\bin\Debug\netcoreapp3.1\I_Hate_Covid.pdb
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.csprojAssemblyReference.cache
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.csproj.CoreCompileInputs.cache
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.AssemblyInfoInputs.cache
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.AssemblyInfo.cs
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.dll
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.pdb
+C:\Users\Grennon\source\repos\I_Hate_Covid\I_Hate_Covid\obj\Debug\netcoreapp3.1\I_Hate_Covid.genruntimeconfig.cache

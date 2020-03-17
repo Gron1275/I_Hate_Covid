@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "I_Hate_Covid/1.0.0": {
+        "runtime": {
+          "I_Hate_Covid.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "I_Hate_Covid/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
