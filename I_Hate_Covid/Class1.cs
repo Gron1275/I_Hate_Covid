@@ -68,6 +68,10 @@ namespace I_Hate_Covid
             Array.Copy(Rotated, elements, Rotated.Length);
 
         }
+        public void Print()
+        {
+
+        }
     }
 
 }

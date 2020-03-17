@@ -48,7 +48,7 @@ namespace I_Hate_Covid
             object[] final = new object[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
-                final[i] = EncryptChar(input[i], wheelz);
+                final[i] = EncryptChar(input[i], wheelz, i);
             }
             Console.Write("Output string: ");
             for (int j = 0; j < final.Length; j++)
@@ -56,7 +56,7 @@ namespace I_Hate_Covid
                 Console.Write($"{final[j]}");
             }
         }
-        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc) //difference might hafta be constant for each string
+        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes) //difference might hafta be constant for each string
                                                                             // if so declare and pass it bc variability not good
                                                                             // for when I need to decrypt - rn code is like hasher
         {
@@ -66,12 +66,13 @@ namespace I_Hate_Covid
             {
                 iterWheel.Rotate(difference, (difference % 2 == 0) ? 'L' : 'R');
             }
-            return wheelzLoc[2].ElementLoc(0);
+            return wheelzLoc[(wheelDes % 2 == 0) ? 1: 2].ElementLoc(0);
 
             //RotateAll(difference I HAVE AN ISSUE WITH SCOPE LEVELS!!!!!!
 
 
         }
+        
         /*public static void RotateAll(int rot, Wheel[] wheelzLoc) //need wheelz to be defualt parameter b/c i want ease
         {
             foreach (Wheel iterWheel in wheelzLoc)
