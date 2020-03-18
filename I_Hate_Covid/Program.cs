@@ -15,11 +15,13 @@ namespace I_Hate_Covid
         public static void Main(string[] args)
         {
             bool Debug = false;
-            Console.Write("What is the character key? (Any 3 printable characters): ");
-            string key = Console.ReadLine();
+            //Console.Write("What is the character key? (Any 3 printable characters): ");
+            //string key = Console.ReadLine();
+            string key = "$66";
+            
             Console.Write("What is the string to encrypt?: ");
             string input = Console.ReadLine();
-
+            
             int locZero = Convert.ToInt32(key[0]);
             int locOne = Convert.ToInt32(key[1]);
             int locTwo = Convert.ToInt32(key[2]);
