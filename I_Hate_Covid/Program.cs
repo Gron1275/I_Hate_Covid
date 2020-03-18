@@ -47,11 +47,9 @@ namespace I_Hate_Covid
             
             Console.WriteLine("");
             Console.WriteLine($"Input string: {input}");
-            object[] final = new object[input.Length];
-            for (int i = 0; i < input.Length; i++)
-            {
-                final[i] = EncryptChar(input[i], wheelz, i, Debug);
-            }
+
+            object[] final = Encrypt(input, wheelz, Debug);
+
             Console.WriteLine("");
             Console.Write("\nOutput string: ");
             for (int j = 0; j < final.Length; j++)
@@ -60,6 +58,15 @@ namespace I_Hate_Covid
             }
             Console.WriteLine("\n Press any key to exit...");
             Console.ReadKey();
+        }
+        public static object[] Encrypt(string inputLoc, Wheel[] wheelzLoc, bool debug)
+        {
+            object[] final = new object[inputLoc.Length];
+            for (int i = 0; i < inputLoc.Length; i++)
+            {
+                final[i] = EncryptChar(inputLoc[i], wheelzLoc, i, debug);
+            }
+            return final;
         }
         public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug) 
         {
@@ -73,6 +80,17 @@ namespace I_Hate_Covid
             }
             return wheelzLoc[2].ElementLoc(0);
         }
+        public static object[] Decrypt(string encLoc, Wheel[] wheelzLoc, bool debug)
+        {
+            object[] final = new object[encLoc.Length];
+            for (int i = encLoc.Length - 1; i >= 0; i--)
+            {
+               // final[i] = DecryptChar(encLoc[i], wheelzLoc, debug);
+            }
+            return final;
+
+        }
+        //public static char DecryptChar()
         /*public static void DecryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug)
         {
             int difference;
