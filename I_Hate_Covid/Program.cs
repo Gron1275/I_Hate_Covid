@@ -17,6 +17,8 @@ namespace I_Hate_Covid
 
             Console.Write("What is the character key?: ");
             string key = Console.ReadLine();
+            Console.Write("What is the string to encrypt?: ");
+            string input = Console.ReadLine().ToUpper();
 
             int locZero = Convert.ToInt32(key[0]);
             int locOne = Convert.ToInt32(key[1]);
@@ -37,7 +39,7 @@ namespace I_Hate_Covid
             wheel0.Print(locZero);
             wheel1.Print(locOne);
             wheel2.Print(locTwo);
-            string input = "Grennon".ToUpper();
+
             Console.WriteLine("");
             Console.WriteLine($"Input string: {input}");
             object[] final = new object[input.Length];
@@ -57,23 +59,10 @@ namespace I_Hate_Covid
             difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
             foreach (Wheel iterWheel in wheelzLoc)
             {
-                iterWheel.Rotate(difference);
-                iterWheel.Print(difference);
+                iterWheel.Rotate(difference + wheelDes);
+                iterWheel.Print(difference + wheelDes);
             }
             return wheelzLoc[2].ElementLoc(0);
-
-            //RotateAll(difference I HAVE AN ISSUE WITH SCOPE LEVELS!!!!!!
-
-
         }
-        
-        /*public static void RotateAll(int rot, Wheel[] wheelzLoc) //need wheelz to be defualt parameter b/c i want ease
-        {
-            foreach (Wheel iterWheel in wheelzLoc)
-            {
-                iterWheel.Rotate(rot, (rot % 2 == 0) ? 'L': 'R');
-            }
-        }*/
-
     }
 }
