@@ -51,8 +51,9 @@ namespace I_Hate_Covid
             for (int i = 0; i < input.Length; i++)
             {
                 final[i] = EncryptChar(input[i], wheelz, i, Debug);
-            } 
-            Console.Write("Output string: ");
+            }
+            Console.WriteLine("");
+            Console.Write("\nOutput string: ");
             for (int j = 0; j < final.Length; j++)
             {
                 Console.Write($"{final[j]}");

@@ -6,7 +6,7 @@ namespace I_Hate_Covid
     {
         private object[] elements = new object[93];
         private char lastDir;
-        private string wheelID;
+        private readonly string wheelID;
 
         public object[] Elements
         {
