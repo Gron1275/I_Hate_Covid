@@ -4,44 +4,39 @@ namespace I_Hate_Covid
 {
     class Program
     {
+        /*                                                  [ROTCRYPT]
+         *                                                Grennon Gurney
+         *                                                    Notes:
+         *                                    For my sanity, I am making rotations only
+         *                                 work in the left direction FOR NOW until i can make
+         *                               the code way better. I will leave the Left Rot method open   
+         *                                                 for later use!
+         */
         public static void Main(string[] args)
         {
-            //char[] key = new char[3];
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    System.Console.WriteLine("What is the {0} character of the 3 char key?: ", i);
-            //    key[i] = Convert.ToChar(Console.ReadLine());
-            //}
-            Console.Write("What is the 3 character key?: ");
+
+            Console.Write("What is the character key?: ");
             string key = Console.ReadLine();
 
             int locZero = Convert.ToInt32(key[0]);
             int locOne = Convert.ToInt32(key[1]);
             int locTwo = Convert.ToInt32(key[2]);
 
-            Wheel wheel0 = new Wheel();
-            Wheel wheel1 = new Wheel();
-            Wheel wheel2 = new Wheel();
+            Wheel wheel0 = new Wheel("wheel0");
+            Wheel wheel1 = new Wheel("wheel1");
+            Wheel wheel2 = new Wheel("wheel2");
             Wheel[] wheelz = new Wheel[]
             {
                 wheel0, wheel1, wheel2
             };
-            Console.Write("Wheel0: ");
-            for (int i = 0; i < wheel0.Elements.Length; i++)
-            {
-                Console.Write($"{wheel0.ElementLoc(i)} ");
-            }
-            wheel0.Rotate(locZero, (locZero % 2 == 0) ? 'L' : 'R');
-            wheel1.Rotate(locOne, (locOne % 2 == 0) ? 'L' : 'R');
-            wheel2.Rotate(locTwo, (locTwo % 2 == 0) ? 'L' : 'R');
 
-            Console.WriteLine("");
-            Console.Write($"Wheel0 Rotated {locZero} {((locZero % 2 == 0) ? "Left" : "Right")}: ");
-            for (int i = 0; i < wheel0.Elements.Length; i++)
-            {
-                Console.Write($"{wheel0.ElementLoc(i)} ");
-            }
+            wheel0.Rotate(locZero);
+            wheel1.Rotate(locOne);
+            wheel2.Rotate(locTwo);
 
+            wheel0.Print(locZero);
+            wheel1.Print(locOne);
+            wheel2.Print(locTwo);
             string input = "Grennon".ToUpper();
             Console.WriteLine("");
             Console.WriteLine($"Input string: {input}");
@@ -49,24 +44,23 @@ namespace I_Hate_Covid
             for (int i = 0; i < input.Length; i++)
             {
                 final[i] = EncryptChar(input[i], wheelz, i);
-            }
+            } 
             Console.Write("Output string: ");
             for (int j = 0; j < final.Length; j++)
             {
                 Console.Write($"{final[j]}");
             }
         }
-        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes) //difference might hafta be constant for each string
-                                                                            // if so declare and pass it bc variability not good
-                                                                            // for when I need to decrypt - rn code is like hasher
+        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes) 
         {
             int difference;
-            difference = wheelzLoc[0].ElementIndex(inputChar);
+            difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
             foreach (Wheel iterWheel in wheelzLoc)
             {
-                iterWheel.Rotate(difference, (difference % 2 == 0) ? 'L' : 'R');
+                iterWheel.Rotate(difference);
+                iterWheel.Print(difference);
             }
-            return wheelzLoc[(wheelDes % 2 == 0) ? 1: 2].ElementLoc(0);
+            return wheelzLoc[2].ElementLoc(0);
 
             //RotateAll(difference I HAVE AN ISSUE WITH SCOPE LEVELS!!!!!!
 

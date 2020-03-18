@@ -5,6 +5,8 @@ namespace I_Hate_Covid
     class Wheel
     {
         private object[] elements = new object[26];
+        private char lastDir;
+        private string wheelID;
 
         public object[] Elements
         {
@@ -23,14 +25,15 @@ namespace I_Hate_Covid
             return elementLoc;
         }
 
-        public Wheel()
+        public Wheel(string name)
         {
+            wheelID = name;
             for (int i = 65; i <= 90; i++)
             {
                 elements[i - 65] = (char)(i);
             }
         }
-        public void Rotate(int rot, char direction)
+        public void Rotate(int rot, char direction) //Main Rot function, an override will be for debugging with only right Rots
         {
             object[] Rotated = new object[26];
             int Len = elements.Length;
@@ -49,6 +52,7 @@ namespace I_Hate_Covid
                         Rotated[ind + locRot] = elements[ind];
                     }
                 }
+                lastDir = 'R';
             }
             else
             {
@@ -64,13 +68,39 @@ namespace I_Hate_Covid
                         Rotated[ind] = elements[ind + locRot];
                     }
                 }
+                lastDir = 'L';
             }
             Array.Copy(Rotated, elements, Rotated.Length);
 
         }
-        public void Print()
+        public void Rotate(int rot)
         {
-
+            object[] Rotated = new object[26];
+            int Len = elements.Length;
+            int locRot = (rot % Len);
+            for (int ind = 0; ind < Len; ind++)
+            {
+                if (locRot + ind >= Len)
+                {
+                    int supLoc = locRot - (Len - ind);
+                    Rotated[supLoc] = elements[ind];
+                }
+                else
+                {
+                    Rotated[ind + locRot] = elements[ind];
+                }
+            }
+            lastDir = 'R';
+            Array.Copy(Rotated, elements, Rotated.Length);
+        }
+        public void Print(int rotated = 0)
+        {
+            Console.Write($"{wheelID} rotated {rotated} {((lastDir == 'L') ? "left": "right")}: ");
+            for (int i = 0; i < elements.Length; i++)
+            {
+                Console.Write($"{elements[i]}, ");
+            }
+            Console.WriteLine("");
         }
     }
 
