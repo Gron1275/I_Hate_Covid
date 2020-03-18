@@ -37,6 +37,7 @@ namespace I_Hate_Covid
             wheel0.Rotate(locZero);
             wheel1.Rotate(locOne);
             wheel2.Rotate(locTwo);
+            
             if (Debug == true)
             {
                 wheel0.Print(locZero);
@@ -44,7 +45,6 @@ namespace I_Hate_Covid
                 wheel2.Print(locTwo);
             }
             
-
             Console.WriteLine("");
             Console.WriteLine($"Input string: {input}");
             object[] final = new object[input.Length];
