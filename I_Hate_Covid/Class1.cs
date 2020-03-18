@@ -4,7 +4,7 @@ namespace I_Hate_Covid
 {
     class Wheel
     {
-        private object[] elements = new object[26];
+        private object[] elements = new object[93];
         private char lastDir;
         private string wheelID;
 
@@ -28,14 +28,14 @@ namespace I_Hate_Covid
         public Wheel(string name)
         {
             wheelID = name;
-            for (int i = 65; i <= 90; i++)
+            for (int i = 33; i <= 125; i++)
             {
-                elements[i - 65] = (char)(i);
+                elements[i - 33] = (char)(i);
             }
         }
         public void Rotate(int rot, char direction) //Main Rot function, an override will be for debugging with only right Rots
         {
-            object[] Rotated = new object[26];
+            object[] Rotated = new object[93];
             int Len = elements.Length;
             int locRot = (rot % Len);
             if (direction == 'R')
@@ -75,7 +75,7 @@ namespace I_Hate_Covid
         }
         public void Rotate(int rot)
         {
-            object[] Rotated = new object[26];
+            object[] Rotated = new object[93];
             int Len = elements.Length;
             int locRot = (rot % Len);
             for (int ind = 0; ind < Len; ind++)

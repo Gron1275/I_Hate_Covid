@@ -14,11 +14,11 @@ namespace I_Hate_Covid
          */
         public static void Main(string[] args)
         {
-
-            Console.Write("What is the character key?: ");
+            bool Debug = false;
+            Console.Write("What is the character key? (Any 3 printable characters): ");
             string key = Console.ReadLine();
             Console.Write("What is the string to encrypt?: ");
-            string input = Console.ReadLine().ToUpper();
+            string input = Console.ReadLine();
 
             int locZero = Convert.ToInt32(key[0]);
             int locOne = Convert.ToInt32(key[1]);
@@ -35,17 +35,20 @@ namespace I_Hate_Covid
             wheel0.Rotate(locZero);
             wheel1.Rotate(locOne);
             wheel2.Rotate(locTwo);
-
-            wheel0.Print(locZero);
-            wheel1.Print(locOne);
-            wheel2.Print(locTwo);
+            if (Debug == true)
+            {
+                wheel0.Print(locZero);
+                wheel1.Print(locOne);
+                wheel2.Print(locTwo);
+            }
+            
 
             Console.WriteLine("");
             Console.WriteLine($"Input string: {input}");
             object[] final = new object[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
-                final[i] = EncryptChar(input[i], wheelz, i);
+                final[i] = EncryptChar(input[i], wheelz, i, Debug);
             } 
             Console.Write("Output string: ");
             for (int j = 0; j < final.Length; j++)
@@ -55,14 +58,15 @@ namespace I_Hate_Covid
             Console.WriteLine("\n Press any key to exit...");
             Console.ReadKey();
         }
-        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes) 
+        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug) 
         {
             int difference;
             difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
             foreach (Wheel iterWheel in wheelzLoc)
             {
                 iterWheel.Rotate(difference + wheelDes);
-                iterWheel.Print(difference + wheelDes);
+                if (debug == true) { iterWheel.Print(difference + wheelDes); }
+                
             }
             return wheelzLoc[2].ElementLoc(0);
         }
