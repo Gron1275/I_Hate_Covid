@@ -52,6 +52,8 @@ namespace I_Hate_Covid
             {
                 Console.Write($"{final[j]}");
             }
+            Console.WriteLine("\n Press any key to exit...");
+            Console.ReadKey();
         }
         public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes) 
         {
