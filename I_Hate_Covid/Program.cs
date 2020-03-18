@@ -70,5 +70,17 @@ namespace I_Hate_Covid
             }
             return wheelzLoc[2].ElementLoc(0);
         }
+        /*public static void DecryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug)
+        {
+            int difference;
+            difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
+            foreach (Wheel iterWheel in wheelzLoc)
+            {
+                iterWheel.Rotate(difference + wheelDes, 'L');
+                if (debug == true) { iterWheel.Print(difference + wheelDes); }
+            }
+            return wheelzLoc
+        }
+        */
     }
 }

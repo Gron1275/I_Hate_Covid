@@ -25,7 +25,7 @@ namespace I_Hate_Covid
             return elementLoc;
         }
 
-        public Wheel(string name)
+        public Wheel(string name = null)
         {
             wheelID = name;
             for (int i = 33; i <= 125; i++)
