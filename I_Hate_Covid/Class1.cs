@@ -103,5 +103,4 @@ namespace I_Hate_Covid
             Console.WriteLine("");
         }
     }
-
 }

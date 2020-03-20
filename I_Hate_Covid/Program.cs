@@ -15,8 +15,6 @@ namespace I_Hate_Covid
         public static void Main(string[] args)
         {
             bool Debug = false;
-            //Console.Write("What is the character key? (Any 3 printable characters): ");
-            //string key = Console.ReadLine();
             string key = "$66";
             
             Console.Write("What is the string to encrypt?: ");
@@ -26,9 +24,10 @@ namespace I_Hate_Covid
             int locOne = Convert.ToInt32(key[1]);
             int locTwo = Convert.ToInt32(key[2]);
 
-            Wheel wheel0 = new Wheel("wheel0");
-            Wheel wheel1 = new Wheel("wheel1");
-            Wheel wheel2 = new Wheel("wheel2");
+            EnigmaMachine enigma = new EnigmaMachine();
+            Wheel wheel0 = new Wheel((Debug == true) ? "wheel0": null);
+            Wheel wheel1 = new Wheel((Debug == true) ? "wheel1" : null);
+            Wheel wheel2 = new Wheel((Debug == true) ? "wheel2" : null);
             Wheel[] wheelz = new Wheel[]
             {
                 wheel0, wheel1, wheel2
@@ -48,7 +47,7 @@ namespace I_Hate_Covid
             Console.WriteLine("");
             Console.WriteLine($"Input string: {input}");
 
-            object[] final = Encrypt(input, wheelz, Debug);
+            object[] final = enigma.Encrypt(input, wheelz, Debug);
 
             Console.WriteLine("");
             Console.Write("\nOutput string: ");
@@ -59,49 +58,5 @@ namespace I_Hate_Covid
             Console.WriteLine("\n Press any key to exit...");
             Console.ReadKey();
         }
-        public static object[] Encrypt(string inputLoc, Wheel[] wheelzLoc, bool debug)
-        {
-            object[] final = new object[inputLoc.Length];
-            for (int i = 0; i < inputLoc.Length; i++)
-            {
-                final[i] = EncryptChar(inputLoc[i], wheelzLoc, i, debug);
-            }
-            return final;
-        }
-        public static object EncryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug) 
-        {
-            int difference;
-            difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
-            foreach (Wheel iterWheel in wheelzLoc)
-            {
-                iterWheel.Rotate(difference + wheelDes);
-                if (debug == true) { iterWheel.Print(difference + wheelDes); }
-                
-            }
-            return wheelzLoc[2].ElementLoc(0);
-        }
-        public static object[] Decrypt(string encLoc, Wheel[] wheelzLoc, bool debug)
-        {
-            object[] final = new object[encLoc.Length];
-            for (int i = encLoc.Length - 1; i >= 0; i--)
-            {
-               // final[i] = DecryptChar(encLoc[i], wheelzLoc, debug);
-            }
-            return final;
-
-        }
-        //public static char DecryptChar()
-        /*public static void DecryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug)
-        {
-            int difference;
-            difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
-            foreach (Wheel iterWheel in wheelzLoc)
-            {
-                iterWheel.Rotate(difference + wheelDes, 'L');
-                if (debug == true) { iterWheel.Print(difference + wheelDes); }
-            }
-            return wheelzLoc
-        }
-        */
     }
 }
