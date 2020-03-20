@@ -14,7 +14,7 @@ namespace I_Hate_Covid
          */
         public static void Main(string[] args)
         {
-            bool Debug = false;
+            bool Debug = true;
             string key = "$66";
             
             Console.Write("What is the string to encrypt?: ");
