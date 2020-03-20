@@ -1,5 +1,4 @@
-﻿using System;
-namespace I_Hate_Covid
+﻿namespace I_Hate_Covid
 {
     class EnigmaMachine
     {
@@ -26,9 +25,7 @@ namespace I_Hate_Covid
             }
             return wheelzLoc[wheelDes].ElementLoc(difference); //this might work but who knows at this point
         }
-
-
-
+/////////////////////////////////////////////////////
         public object[] Encrypt(string inputLoc, Wheel[] wheelzLoc, bool debug)
         {
             object[] final = new object[inputLoc.Length];
@@ -38,7 +35,6 @@ namespace I_Hate_Covid
             }
             return final;
         }
-        
         public object[] Decrypt(string encLoc, Wheel[] wheelzLoc, bool debug)
         {
             object[] final = new object[encLoc.Length];
@@ -47,7 +43,6 @@ namespace I_Hate_Covid
                final[i] = DecryptChar(encLoc[i], wheelzLoc, i, debug);
             }
             return final;
-
         }
     }
 }

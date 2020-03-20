@@ -26,8 +26,8 @@ namespace I_Hate_Covid
 
             EnigmaMachine enigma = new EnigmaMachine();
             Wheel wheel0 = new Wheel((Debug == true) ? "wheel0": null);
-            Wheel wheel1 = new Wheel((Debug == true) ? "wheel1" : null);
-            Wheel wheel2 = new Wheel((Debug == true) ? "wheel2" : null);
+            Wheel wheel1 = new Wheel((Debug == true) ? "wheel1": null);
+            Wheel wheel2 = new Wheel((Debug == true) ? "wheel2": null);
             Wheel[] wheelz = new Wheel[]
             {
                 wheel0, wheel1, wheel2
