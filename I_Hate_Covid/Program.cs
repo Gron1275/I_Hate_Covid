@@ -59,6 +59,12 @@ namespace I_Hate_Covid
             {
                 Console.Write("What is the string you would like to decrypt: ");
                 string cryptIn = Console.ReadLine();
+                if (Debug == true)
+                {
+                    wheel0.Print(locZero);
+                    wheel1.Print(locOne);
+                    wheel2.Print(locTwo);
+                }
                 Console.WriteLine($"\nEncrypted Input String: {cryptIn}");
                 object[] finalDecrypted = enigma.Decrypt(cryptIn, wheelz, Debug);
                 Console.Write("\nDecrypted string: ");

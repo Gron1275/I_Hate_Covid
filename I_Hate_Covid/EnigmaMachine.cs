@@ -8,7 +8,8 @@
             difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
             foreach (Wheel iterWheel in wheelzLoc)
             {
-                iterWheel.Rotate(difference + wheelDes);
+                //iterWheel.Rotate(difference + wheelDes);
+                iterWheel.Rotate(difference, 'L');
                 if (debug == true) { iterWheel.Print(difference + wheelDes); }
 
             }
@@ -17,13 +18,14 @@
         private object DecryptChar(char inputChar, Wheel[] wheelzLoc, int wheelDes, bool debug)
         {
             int difference;
-            difference = wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementIndex(inputChar);
+            difference = wheelzLoc[2].ElementIndex(inputChar);
             foreach (Wheel iterWheel in wheelzLoc)
             {
-                iterWheel.Rotate(difference + wheelDes, 'L');
+                iterWheel.Rotate(difference, 'L');
+                //iterWheel.Rotate(difference + wheelDes, 'L');
                 if (debug == true) { iterWheel.Print(difference + wheelDes); }
             }
-            return wheelzLoc[wheelDes].ElementLoc(difference); //this might work but who knows at this point
+            return wheelzLoc[(wheelDes % 2 == 0) ? 0 : 1].ElementLoc(0); //this might work but who knows at this point
         }
 /////////////////////////////////////////////////////
         public object[] Encrypt(string inputLoc, Wheel[] wheelzLoc, bool debug)
