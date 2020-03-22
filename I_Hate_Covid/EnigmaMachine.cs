@@ -11,7 +11,6 @@
                 //iterWheel.Rotate(difference + wheelDes);
                 iterWheel.Rotate(difference, 'L');
                 if (debug == true) { iterWheel.Print(difference + wheelDes); }
-
             }
             return wheelzLoc[2].ElementLoc(0);
         }
