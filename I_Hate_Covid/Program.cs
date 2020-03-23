@@ -15,7 +15,7 @@ namespace I_Hate_Covid
         public static void Main(string[] args)
         {
             bool Debug = true;
-            string key = "$66", input;
+            string key = "$6G", input;
             Console.Write("Would you like encrypt or decrypt a string?: ");
             string choice = (Console.ReadLine() == "encrypt") ? "e" : "d";
 
